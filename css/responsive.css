@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media (max-width:1364px) {}
+@media (max-width:1224px) {
+	
+	.banner_text h1 { font-size: 26px;}
+.banner_text h2 { font-size: 26px;}	
+.banner_text p { font-size: 14px;}	
+	.banner_text p {width: 100%;}
+	.shipment_bb li {   width: 129px;}
+	.pro_header h1 { font-size: 13px;}
+	
+	.nav > li > a {padding: 10px 11px !important;}
+	
+	.confrim_view_popup { width: auto !important;}
+	.confrim_view_outer{ width: auto;}
+	.confirm_view {   font-size: 13px; padding: 2px 7px;}
+	.carrie_chan {  font-size: 10px;padding: 4px;}
+}
+
+@media (max-width:1023px) {
+	
+.banner_text h1 { font-size: 16px;}
+.banner_text h2 { font-size: 16px;}	
+.banner_text p { font-size: 14px;}	
+.content_video ul li {      font-size: 15px;line-height: 16px;list-style-position: outside;}
+.footer_menu { display: inline-block; text-align: center;}
+	.footer_box_inn { text-align: center;}
+	.footsocial {display: inline-block; float: none; text-align: center;}
+	
+.con_how_work .con_how_b figure img {   width: 51%;}
+	.con_how_work .con_how_b figure {   height: 90px;   width: 91px;}
+	.con_how_work .con_how_b p { font-size: 13px;line-height: 21px;}
+	
+	
+	.work_border {height: 536px;left: 70px; top: 73px; width: 83%;}
+	.shipment_bb li {   width: 73px;}
+	.profile_box ul li { font-size: 13px;}
+	.header_menn { float: right; margin: 0 0 18px;}
+	
+	
+}
+
+
+
+
+
+
+@media (max-width:767px) {
+.logo { text-align: center;}	
+.header_box_inn {   text-align: center;}
+.account_button {  display: inline-block; float: none; margin: 19px 0 0;  text-align: center;}
+.banner_text { text-align: center;}
+.banner_text figure {margin: 23px 0 0;}
+	.banner_text h1 { font-size: 30px;}
+.banner_text h2 { font-size: 30px;}	
+.banner_text p { font-size: 14px;}
+.banner_box_inn { padding: 46px 0 50px;}
+.content_video {text-align: center;}
+.content_video h2{text-align: center;}
+.content_video p{text-align: center;}
+.content_video iframe {  margin: 0 0 23px;}
+.content_video ul li {  list-style-position: inside;}
+
+.work_border{display:none;}
+.work_logo{display:none;}
+
+
+.con_how_work .con_how_b figure {display: inline-block; height: 124px; width: 124px;   margin: 0 0 21px;}
+.con_how_work .con_how_b {text-align: center;   margin: 0 0 37px;}
+
+  
+.con_how_work .col-lg-6:nth-child(3) .col-lg-4 {float: left;  width: 100%;} 
+.con_how_work.col-lg-6:nth-child(3) .col-lg-8 h2 { text-align: center; float: left;  width: 100%;}
+.con_how_work.col-lg-6:nth-child(3) .col-lg-8 p { text-align: center; float: left;}
+  
+  
+  .con_how_work .col-lg-6:nth-child(6) .col-lg-4 {float: left;  width: 100%;} 
+  .con_how_work .col-lg-6:nth-child(6) h2 { text-align: center; float: left;  width: 100%;}
+.con_how_work .col-lg-6:nth-child(6) p { text-align: center; float: left;}
+  .book_form .btn-facebook { margin: 0 0 17px;}
+
+.res_count{ display:initial !important;}
+
+.divider{background:none;   padding-left: 0;}
+
+.c_number { margin: 0 0 26px; text-align: center;}
+.c_number h1 {width: 100%;}
+.c_number span {display: inline-block;   float: none;text-align: center;}
+
+.shipment_bb li { width: 100%!important;margin: 0 0 26px;}
+.shipment_bb > li:nth-child(3) {text-align:center;}
+
+.create_form_right h3 {   margin:12px 0;}
+
+.header_menn .navigation { display: inline-block; float: left; margin: 22px 0 0; width: 100%;}
+.header_menn {  text-align: center;  width: 100%; position: relative;  z-index: 222;}
+.pro_header { display: inline-block; float: none; margin: 5px 0 0; width: auto;}
+
+.profile_setting {  display: inline-block; float: none; margin: 3px 0 11px;}
+
+.header_menn .dropdown-menu { background-color: #ffefef !important;text-align: center;}
+
+
+.pro_box {text-align: center;}
+.pro_box figure { display: inline-block; float: none;}
+.pro_box h1 { margin: 4px 0 22px;width: 100%;}
+.pro_change { display: inline-block; float: none;}
+.profile_box { text-align: center;}
+.profile_box ul li {font-size: 17px;}
+.profile_box ul li span {  width: 100%;}
+.carriers_box_lsiting { overflow-x: scroll;}
+.delivered_bottom_add { overflow-x: scroll; margin: 30px 0 ; float:left; width:100%;}
+.delivered_bottom_tracking{ overflow-x: scroll; margin: 30px 0 ; float:left; width:100%;}
+.carrie_chan { margin: 0 0 5px;}
+
+.delivered_trcing_field {  margin: 0 0 30px;}
+.deli_tracking span input {  margin: 0 0 15px;}
+.deli_tracking span::after { top: 1px;}
+
+
+.delivered_bottom_tracking ul li span{width:100%;}
+.delivered_bottom_tracking ul li h2{width:100%;}
+
+.contact_b h3 {text-align: center; width: 100%;}
+.contact_b ul li i { float: none;}
+.contact_b ul li p {   text-align: center;}
+.contact_b ul section { border-bottom: none;}
+.contact_b ul li{ border-bottom: 1px solid #ccc;}
+
+.profile_out { width: 100%;}
+.carrie_new { margin: 20px 0 10px;   width: 100%;}
+
+
+
+.con_how_work .col-lg-6:nth-child(3) .col-lg-8 h2 {text-align: center;}
+.con_how_work .col-lg-6:nth-child(3) .col-lg-8 p {text-align: center;}
+
+}
+
+
+
+@media (max-width: 640px) {}
+
+
+@media (max-width: 480px) {
+	.footsocial a i { font-size: 14px;  height: 28px;line-height: 27px; width: 28px;}
+	.footer_menu ul li a { font-size: 15px;margin: 0 14px 0 0;}
+	
+	.previous_d{width:100%;}
+	.save_d{width:100%;margin: 20px 0;}
+	.next_d{width:100%;}
+	
+	.page_tittle h1 {text-align: center; width: 100%;}
+	
+	.carrier_1 { width: 11%;}
+.carrier_2 {  width: 20%;}
+.carrier_3 {  width: 14%;}	
+.carrier_4 {  width: 15%;}
+.carrier_5 {  width: 10%;}
+.carrier_6 {  width: 1%;}
+	
+	}
+
+
+
+@media (max-width: 320px) {}
+	
+	

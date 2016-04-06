@@ -1,0 +1,20 @@
+<div class="row" ng-show="notificationService.hasOneTimeMessage('success')">
+	<div class="col-md-12">
+	    <div class="alert alert-success">{{notificationService.getOneTimeMessage('success')}}</div>
+	</div>        
+</div>
+<div class="row" ng-show="notificationService.hasOneTimeMessage('error')">
+	<div class="col-md-12 alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Error:</span>
+	   {{notificationService.getOneTimeMessage('error')}}
+	</div>        
+</div>
+<div ng-show="notificationService.hasMessage('alerts')">
+  <div class="alert my-alert my-aler
+  <span class="sr-only">Error:</span>t-success fade in" ng-repeat="message in notificationService.getMessage('alerts')">
+    <a class="close my-close" data-dismiss="alert" aria-label="close" ng-click="notificationService.clearMessage('alerts')">&times;</a>
+    <!-- <img src="assets/images/rfp/warning.png" alt="warning" /> -->
+    <span>{{message.text}}</span>
+  </div>
+</div>

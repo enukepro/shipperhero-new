@@ -1,0 +1,80 @@
+<nav class="navbar navbar-default my-navbar" ng-controller="LayoutCtrl">
+  <div class="container-fluid my-container-fluid">
+    <div class="navbar-header my-navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#shipper-nav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/carrier-dashboard">
+        <img src="assets/images/rfp/logo.png" alt="logo" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="shipper-nav">
+      <ul class="nav navbar-nav" id="content-nav">
+        <li class="dropdown">
+          <a href="/carrier-dashboard" class="dropdown-toggle" data-toggle="dropdown">RFPs<span class="caret my-caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/carrier-myrfp">My RFPs</a></li>
+            <li><a href="/carrier-pending">Pending</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/carrier-confirmed" class="dropdown-toggle" data-toggle="dropdown">Shipments<span class="caret my-caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/carrier-confirmed">Confirmed</a></li>
+            <li><a href="/carrier-in_transit">In Transit</a></li>
+            <li><a href="/carrier-delivered">Delivered</a></li>
+            <li><a href="/carrier-completed">Completed</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/carriers" class="dropdown-toggle" data-toggle="dropdown">Shippers<span class="caret my-caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/shipper">My Shipper</a></li>
+            <li><a class="dropdown-last" href="/shipper-invites">Invite New</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="right-nav">
+        <li id="user-header">
+          <a href="#">
+            <span class="username">{{getWelcomeMessage()}}</span>
+            <img src="assets/images/rfp/user.png" alt="Current User" />
+          </a>
+        </li>
+        <li class="dropdown" id="user-settings">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            <img src="assets/images/rfp/settings.png" alt="Settings" />
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/carrier_myprofile"><i class="icon-user"></i><span>My Profile</span></a>
+            </li>
+            <!--
+            <li>
+              <a data-target="#"><i class="icon-calendar"></i><span>My Calendar</span></a>
+            </li>
+            <li>
+              <a data-target="#"><i class="icon-settings"></i><span>Account Settings</span></a>
+            </li>
+            -->
+            <li>
+              <a href="#" ng-click="logout()"><i class="icon-logout"></i><span>Logout</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script type="text/javascript">
+$(function(){
+  $('.dropdown').hover(function() {
+    $(this).addClass('open');
+  },
+  function() {
+    $(this).removeClass('open');
+  });
+});
+</script>
