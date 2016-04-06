@@ -74,9 +74,9 @@
     <span class="caret"></span>
   </a>
 
-  <ul class="dropdown-menu"  aria-labelledby="dLabel">
+  <ul class="dropdown-menu aria-labelledby">
 <li><a href="profile.html">My Profile</a></li>
-<li><a href="">Logout</a></li>
+<li><a href="#"  ng-click="logout()">Logout</a></li>
   </ul>
 </div></div>
   
@@ -327,17 +327,6 @@
 			</div>	</div>
   </div></div>
  </div></div><!--footer end-->
- 
- 
- 
- 
- 
- 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 		  <script>
 $('.dropdown').hover(function(){
 $('.dropdown-toggle', this).trigger('click');

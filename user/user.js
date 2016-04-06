@@ -175,6 +175,12 @@ userApp.controller('ProfileCtrl', ['userAuthService', '$scope', '$location', 'no
         });
       });
     }
+    $scope.logout = function() {
+      console.log("logout");
+      userAuthService.logout();
+      $location.path('/');
+    }
+  
 }]);
 userApp.controller('ProfileEditModalCtrl', function($scope, $uibModalInstance, zipSearch,userAuthService, notificationService, $http, formDataStorageService){
   
