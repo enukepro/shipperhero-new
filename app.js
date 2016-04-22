@@ -10,7 +10,8 @@ var myApp = angular.module('myApp', [
   'myApp.layout',
   'ngCookies',
   'ui.bootstrap',
-  'oi.select'
+  'oi.select',
+  'angular-loading-bar'
 ]);
 
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -19,7 +20,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 
   //window.baseUrl = 'http://localhost:3000/'; // local api
   window.baseUrl = 'http://foxsoftware.herokuapp.com:80/';
-  window.appUrl = 'http://shipperhero.com/';
+  window.appUrl = 'http://logisticshero.com/';
    $locationProvider.html5Mode(true);  
    
   /*FacebookProvider.init('1230432736983291');*/
@@ -62,7 +63,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     //Login checks
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
       
-        var publicPages = ['login', 'sign_up', 'success'];
+        var publicPages = ['login', 'sign_up', 'success','confirmation','myprofile'];
       
         if(!userAuthService.isUserLoggedIn()){
             

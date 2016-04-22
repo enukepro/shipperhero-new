@@ -1936,3 +1936,41 @@ html {
 .modal-backdrop{
   z-index: 0 !important;
 }
+.edit-modal-cont ul{
+  border: medium none !important;
+  margin: 0 0 17px;
+}
+.edit-modal-cont li a{
+  border: medium none !important;
+  color: #000;
+  font-size: 17px !important;
+  margin: 0 16px !important;
+  padding: 0 !important;
+}
+.error {
+  color: red;
+}
+.book_form .btn-primary1[disabled] {
+  background: #F39194;
+  cursor: not-allowed;
+}
+@media (min-width: 768px){
+.modal-dialog {
+    margin: 45px auto;
+}
+}
+.book_form span input{
+  margin-bottom: 10px;
+}
+.form-group {
+  position: relative;
+}
+.book_form .error {
+  position: absolute;
+  bottom: -17px;
+  font-size: 12px;
+  left: 5px;
+}
+.alert-danger {
+  color: #FF0500;
+}
