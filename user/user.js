@@ -101,7 +101,7 @@ userApp.factory('retrieveTokens', ['userAuthService', '$location', '$q', 'notifi
 
 /** Request & Response interceptors ends **/
 
-userApp.controller('UserCtrl', ['userAuthService', '$uibModal','$scope', '$location', 'notificationService', '$window' ,function(userAuthService,$uibModal, $scope, $location, notificationService, $window) {
+userApp.controller('UserCtrl', ['userAuthService','$scope', '$uibModal', '$location', 'notificationService', '$window' ,function(userAuthService,$scope,$uibModal, $location, notificationService, $window) {
      var redirectUrl = appUrl+'myprofile';
     var absUrl = $location.absUrl();
     $scope.user = {first_name:'', last_name:'', email:'', alt_email:'', password:'', password_confirmation:'', about:'', mc_num:'', user_type:''};
@@ -115,8 +115,9 @@ userApp.controller('UserCtrl', ['userAuthService', '$uibModal','$scope', '$locat
       userAuthService.login($scope.signin).success(function(data){
         //$('#smallModal').modal('hide');
         $scope.loggedIn=false;
-        $('body').removeClass('modal-open');
-        $('body').css('padding-right','0px');
+     
+       $('body').removeClass('modal-open');
+       $('body').css('padding-right','0px');
      
        //notificationService.setMessage('success', 'Login Successful!'); 
         if(data.message == 'shipper'){
@@ -140,7 +141,8 @@ userApp.controller('UserCtrl', ['userAuthService', '$uibModal','$scope', '$locat
       .success(function(data){        
         notificationService.setMessage('success', 'Please check your email for a verification link.');
         alert("you register successfully.Plz Check your email for confirmation!!");
-        $location.path('/');
+         $('#smallModal2').modal('hide');
+         $location.path('/');
       })
       .error(function(data, response) {        
         var errors = {};
@@ -400,9 +402,9 @@ userApp.controller('EmailConfirmation',  ['$scope', '$http','$location', '$route
   //param = param.join('&');
   var param='config=' + $routeParams.config +'&confirmation_token='+$routeParams.confirmation_token;
    $http.get(baseUrl+'auth/confirmation.json?'+param).success(function(data){
-    console.log("email  confirmed");
-      notificationService.setMessage('success', 'Email confirmed!');
-        $location.path('/');
+     notificationService.setMessage('success', 'Email confirmed!');
+      $('#smallModal').modal('view');
+      $location.path('/');
     }).error(function(response) {
     console.log("Email could not confirmed!");
     notificationService.setMessage('error', 'Email could not confirmed!');
