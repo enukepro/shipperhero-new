@@ -1,0 +1,96 @@
+<!--div class="header_box"><!--header start-->
+   <div class="header_box_inn">
+     <div class="container">
+      <div class="row">
+
+       <div class="col-lg-3 col-sm-4 col-md-3">
+         <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+       </div>
+
+
+       <div class="col-lg-4 col-sm-8 col-md-4">
+         <div class="header_menn">
+
+           <div class="navigation">
+             <nav class="navbar navbar-default">
+
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                 <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">RFPs <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="/myrfp">My RFPs</a></li>
+                   <li><a href="/draft">Drafts</a></li>
+                   <li><a href="/pending">Pending</a></li>
+                   <li><a href="#" class="dropdown-last">Create New</a></li>
+                 </ul>
+               </li>
+
+
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shipments <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="confirmed.html">Confirmed</a></li>
+                  <li><a href="in_transit.html">In Transit</a></li>
+                  <li><a href="delivered.html">Delivered</a></li>
+                  <li><a href="completed.html">Completed</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Carriers <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                 <li><a href="carriers-ratings.html">Ratings</a></li>
+                 <li><a href="carrier-invitation.html">Invited Carrier</a></li>
+                 <li><a href="carriers-invites.html" class="dropdown-last">Send Invitation</a></li>
+               </ul>
+             </li>
+
+           </ul>
+         </div><!-- /.navbar-collapse -->
+       </div>
+     </div>
+   </div><!-- /.container-fluid -->
+
+   <div class="col-lg-4 col-sm-10 col-md-4">
+     <div class="pro_header">
+      <figure><img src="images/profile_p.jpg"></figure>
+      <h1>Welcome {{getWelcomeMessage()}}  ! <span>Current User</span></h1>
+
+    </div> 
+  </div>
+
+  <div class="col-lg-1 col-sm-2 col-md-1" >
+
+    <div class="dropdown profile_setting">
+      <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        Settings
+        <span class="caret"></span>
+      </a>
+
+      <ul class="dropdown-menu aria-labelledby">
+        <li><a href="/myprofile">My Profile</a></li>
+        <li><a href="#"  ng-click="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
+</div>
+</div>
+</div><!--header end-->

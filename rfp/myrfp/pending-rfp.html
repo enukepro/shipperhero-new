@@ -1,0 +1,60 @@
+
+ <div class="myrfp"> <div class="col-lg-12"><!--mrf start-->
+ <div class="carrir_add_user">
+<div class="col-lg-10"><h1>  PENDING RFPS</h1></div>
+<div class="col-lg-2"> <div class="delivered_view"><a href="/pending">View</a></div> 
+ </div>  </div>  </div> 
+ 
+  <div class="col-lg-12">
+  <div class="carriers_box_lsiting">
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+                                                                                                 
+      <th class="carrier_1">  Name/Ref#   </th>                                          
+     <th class="carrier_2"> Pickup City/State    </th>
+    <th class="carrier_3">   Delivery City/State  </th>      
+     <th class="carrier_4">   #Bids  </th>   
+    <th class="carrier_5">   High/Low/Avg Bid    </th> 
+  <th class="carrier_6">      Close Date  </th> 
+ <th class="carrier_7"> Action</th>
+    </tr>
+  </thead>
+  <tbody ng-show="pending.data.length>0">
+    <tr ng-repeat="item in pending.data">
+          <td>{{item.id}}</td>
+          <td>{{item.pickup_address}}</td>
+          <td>{{item.delivery_address}}</td>
+          <td>{{item.bids_count}}</td>
+          <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
+          <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
+     <td> 
+    <button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
+      contact</button>
+          <div id="smallModal-5" class="modal fade" tabindex="-2" role="dialog">
+         <div class="modal-dialog modal-sm">
+            <div class="modal-content profile_out">
+            <div class="modal-body ">
+
+      <div class="pro_box">
+          <figure><img src="images/profile_p.jpg"></figure>
+        <h1>Welcome john malik  ! <span>Current User</span></h1>
+           </div></div></div>  </div>  </div> 
+          <div class="confirm_view"><a href="#">View</a></div>
+    </td>   
+	 </tr>
+	   </tbody>
+     <tbody ng-show="pending.data.length==0">
+        <tr><td colspan="7">No Data Found!</td></tr>
+      </tbody>
+    
+	</table>
+
+  </div>
+  </div>
+  </div><!--mrf end-->
+  
+
+
+ 
+  

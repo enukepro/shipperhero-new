@@ -4,6 +4,7 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
   'myApp.user',
+  'myApp.rfp',
   'myApp.version',
   'myApp.services',
   'ngMessages',

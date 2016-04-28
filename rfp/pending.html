@@ -1,0 +1,58 @@
+<div ng-include="'partials/innerPage_header.html'"></div>
+ 
+  <div class="page_tittle"><!--banner start-->
+ <div class="container">
+      <div class="row" >
+  <div class="col-lg-12" >
+  <h1>pending-rfp</h1>
+  <i><img src="images/small_truck.png"></i>
+ 
+ </div> </div> </div></div>
+
+ 
+  <div class="content_box"><!--content start-->
+ <div class="container">
+      <div class="row" >
+  <div class="inner_all_page">
+ 
+ 
+ 
+   <div class="myrfp">
+ <div class="col-lg-12">
+  <div class="carriers_box_lsiting">
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+                                                                                                 
+      <th class="carrier_1">  Name/Ref#   </th>                                          
+      <th class="carrier_2"> Name/Ref#  </th>                            
+      <th class="carrier_3"> Pickup City/State</th>                          
+      <th class="carrier_4"> Delivery City/State  </th>                            
+      <th class="carrier_5"> Close Date   </th>                               
+      <th class="carrier_6"> Action</th>  
+ </tr>
+  </thead>
+ <tbody ng-show="items.data.length>0">
+        <tr ng-repeat="data in items.data track by $index">
+          <td>{{data.id}}</td>
+          <td>{{data.pickup_address}}</td>
+          <td>{{data.pickup_address}}</td>
+          <td>{{data.delivery_address}}</td>
+          <td>{{getDateObj(data.auction_end_at) | date: 'short'}}</td>
+     <td> 
+      <div class="pending_viewb"><a href="pending_reject.html">Reject</a></div>
+       <div class="pending_viewb b_black"><a href="pending_accepr.html">Accept</a></div>
+    <div class="pending_viewb b_blue"><a href="pending_rfp_view.html">View</a></div>
+    </td> 
+	 </tr>
+	    </tbody>
+    <tbody ng-show="items.data.length==0">
+        <tr><td colspan="7">No Data Found!</td></tr>
+      </tbody>
+	</table>
+
+  </div><!--mrf end-->
+</div></div></div></div></div></div>
+
+ 
+  
