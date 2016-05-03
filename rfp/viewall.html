@@ -1,0 +1,152 @@
+<div ng-include="'partials/innerPage_header.html'"></div>
+<div class="page_tittle"><!--banner start-->
+  <div class="container">
+    <div class="row" >
+      <div class="col-lg-12" >
+        <h1>My RFPs</h1>
+        <i><img src="images/small_truck.png"></i> 
+      </div> 
+    </div> 
+  </div>
+</div>
+<div class="content_box"><!--content start-->
+  <div class="container">
+    <div class="row" >
+      <div class="inner_all_page">   
+        <div class="myrfp">
+
+          <div class="col-lg-12">
+            <div class="carriers_box_lsiting">
+              <table class="table">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th class="carrier_1">  Name/Ref#   </th>                                          
+                    <th class="carrier_2">  Pickup City/State    </th>
+                    <th class="carrier_3">  Delivery City/State  </th>      
+                    <th class="carrier_4">  #Bids  </th>   
+                    <th class="carrier_5">  High/Low/Avg Bid    </th> 
+                    <th class="carrier_6">  Close Date  </th> 
+                    <th class="carrier_7">  Action</th>
+                  </tr>
+                </thead>
+                <tbody ng-show="items.data.length>0">
+                  <tr ng-repeat-start="item in items.data">
+                    <td>{{item.id}}</td>
+                    <td>{{item.pickup_address}}</td>
+                    <td>{{item.delivery_address}}</td>
+                    <td>{{item.bids_count}}</td>
+                    <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
+                    <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
+                    <td> 
+                      <a href="#" class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5" ng-click="pauseConfirmation(item.id)" >
+                        PAUSE</a>
+                        <div class="confirm_view">
+                          <a href="#" ng-click="setVisible($index)" >View</a>
+                        </div>
+                      </td>  
+                    </tr>
+                    <tr ng-repeat-end ng-show="isVisible($index)">
+                        <td colspan="7">
+                          <div class="row">
+                                  <div class="confirm_pro_box">
+                <div class="col-lg-4 col-md-4 col-sm-6" >
+                  <ul>
+                    <h1>Pickup Information</h1>
+                    <li><span>Company </span>: <h2>{{detailItem.shipper_info.company_name}}</h2></li>
+                    <li><span>Contact Name </span>: <h2>{{detailItem.shipper_info.contact_name}}</h2></li>
+                    <li><span>Contact Phone </span>: <h2>{{detailItem.shipper_info.phone}}</h2></li>
+                    <li><span>Contact Email</span>: <h2>{{detailItem.shipper_info.email=='null'?'N/A':detailItem.shipper_info.email}}</h2></li>
+                   
+                   
+                    <li><span>Address 1  </span>: <h2>{{detailItem.shipper_info.address1}}</h2></li>
+                    <li><span>Address 2  </span>: <h2>{{detailItem.shipper_info.address2=='null'?'N/A':detailItem.shipper_info.address2}}</h2></li>
+                    <li><span>City,State,ZIP </span>:<h2>{{detailItem.shipper_info.city}},{{detailItem.shipper_info.state}},{{detailItem.shipper_info.zip_code}}</h2></li>
+                  </ul>
+
+                  <ul>
+                    <h1>Delivery Information</h1>
+                     <li><span>Company </span>: <h2>{{detailItem.receiver_info.company_name}}</h2></li>
+                    <li><span>Contact Name </span>: <h2>{{detailItem.receiver_info.contact_name}}</h2></li>
+                    <li><span>Contact Phone </span>: <h2>{{detailItem.receiver_info.phone}}</h2></li>
+                    <li><span>Contact Email</span>: <h2>{{detailItem.receiver_info.email=='null'?'N/A':detailItem.receiver_info.email}}</h2></li>
+                   
+                    <li><span>Address 1  </span>: <h2>{{detailItem.receiver_info.address1}}</h2></li>
+                    <li><span>Address 2  </span>: <h2>{{detailItem.receiver_info.address2=='null' ?'N/A':detailItem.receiver_info.address2}}</h2></li>
+                    <li><span>City,State,ZIP </span>:<h2>{{detailItem.receiver_info.city}},{{detailItem.receiver_info.state}},{{detailItem.receiver_info.zip_code}}</h2></li>
+                  </ul>
+
+                </div>  
+
+
+                <div class="col-lg-4 col-md-4 col-sm-6" >
+                  <ul>
+                    <h1>Shipment Information</h1>
+                    <li><span># of Cartons  </span>:<h2> {{detailItem.n_of_cartons}}</h2></li>
+                    <li><span>Cubic Feet </span>:<h2>{{detailItem.cubic_feet}}</h2></li>
+
+                    <li><span>Stackable :</span>:<h2> {{detailItem.stackable ? 'Yes' : 'No'}}</h2></li>
+                    <li><span>Unit Count </span>:<h2> {{detailItem.unit_count}}</h2></li>
+                    <li><span>Skid Count : </span>:<h2> {{detailItem.skids_count}}</h2></li>
+                    <li><span>Skid Dimentions(In) </span>: <h2> {{detailItem.dim_w}}"x{{detailItem.dim_h}}"x{{detailItem.dim_l}}"</h2></li>
+                    <li><span>Weight : </span>:<h2>  {{detailItem.weight}}</li>
+                    <li><span>Commodity </span>: <h2> {{detailItem.commodity}}</h2></li>
+                    <li><span>Hazmat </span>: <h2>{{detailItem.hazard ? 'Yes' : 'No'}}</h2></li>
+                    <li><span>Value </span>:<h2>${{detailItem.price}}</h2> </li>
+                    <li><span>Notes For Carrier</span>:<h2>{{detailItem.shipment_info_notes=='null'?'N/A':detailItem.shipment_info_notes}}</h2></li>
+
+                    </ul>
+                  </div> 
+
+
+                  <div class="col-lg-4 col-md-4 col-sm-6" >
+                    <ul>
+                      <h1>Shipment Timing</h1>
+                      <li><span>Pickup Date/Time </span>:<h2>{{getDateObj(detailItem.pickup_at_from) | date: 'short'}} - {{getDateObj(detailItem.pickup_at_to) | date: 'short'}}</label></h2></li>
+                      <li><span>Delivery Date/Time </span>: <h2>{{getDateObj(detailItem.arrive_at_from) | date: 'short'}} - {{getDateObj(detailItem.arrive_at_to) | date: 'short'}}</h2></li>
+                      <li><span>Require Daily Location Updates?</span>: <h2>{{detailItem.require_daily_update?'Yes':'No'}}</h2></li>
+                      <li><span>RFPs Close Date </span>: <h2>{{getDateObj(detailItem.auction_end_at) | date: 'short'}}</li>
+                    </ul>
+
+                    <ul>
+                      <h1>Job Information</h1>
+                      <li><span>PU Number  </span>:<h2>{{detailItem.shipper_info.del_num}}</h2></li>
+                      <li><span>DEL Number  </span>:<h2> {{detailItem.receiver_info.del_num}}</h2></li>
+                      <li><span>PO Number  </span>: <h2>{{detailItem.po}}</h2></li>
+                      <li><span>Internal Notes :</span>: <h2>{{detailItem.shipment_tracking_notes=='undefined'?'N/A':detailItem.shipment_tracking_notes}}</h2></li>
+
+                      </ul>
+                    </div>
+                  </div> 
+                  </div>
+                  </td>
+                  </tr>
+                  </tbody>
+                  <tbody ng-show="items.data.length==0">
+                    <tr><td colspan="7">No Data Found!</td></tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div ng-show="items.data.length>0">
+     <div class="col-md-12">
+      <div class="pull-right">
+        <uib-pagination total-items="totalItems" ng-disabled="blocked" items-per-page="perPage" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  <div ng-include="'partials/innerPage_footer.html'"></div>
+
+
+
+
+
+
+
+
+
