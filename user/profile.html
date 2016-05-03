@@ -7,11 +7,22 @@
                 <h1>Profile</h1>
                 <i><img src="images/small_truck.png"></i>
                </div> 
-            </div> 
+
+               </div> 
           </div>
     </div>
   <div class="content_box"><!--content start-->
     <div class="container">
+    <div class="notification content">
+    <div class="notification message">
+        <div class="row" ng-show="notificationService.hasOneTimeMessage('success')">
+           <div class="col-md-12">
+               <div class="alert alert-success">{{notificationService.getOneTimeMessage('success')}}
+              </div>
+          </div>
+       </div>
+  </div>
+    
       <div class="row" >
         <div class="inner_all_page">
               <div class="col-lg-10 col-lg-offset-1" >

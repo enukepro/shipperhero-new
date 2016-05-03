@@ -488,6 +488,7 @@ select {
 .glyphicon-minus-sign:before {
 	content: "\e082"
 }
+
 .glyphicon-remove-sign:before {
 	content: "\e083"
 }
@@ -1318,13 +1319,7 @@ address {
 code, kbd, pre, samp {
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace
 }
-code {
-	padding: 2px 4px;
-	font-size: 90%;
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px
-}
+
 kbd {
 	padding: 2px 4px;
 	font-size: 90%;
@@ -3734,7 +3729,10 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
 	color: #fff;
-	background-color: #ff5f5f;
+	background-color: #2069c8 ;  border-radius: 6px !important;
+  -webkit-border-radius:6px!important;
+   -moz-border-radius:6px!important;
+   margin:0 0 2px;
 }
 @media (max-width:767px) {
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
@@ -4478,10 +4476,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 .panel {
 	margin-bottom: 20px;
 	background-color: #fff;
-	border: 1px solid transparent;
+
 	border-radius: 4px;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-	box-shadow: 0 1px 1px rgba(0,0,0,.05)
+
 }
 .panel-body {
 	padding: 15px
@@ -4906,7 +4903,7 @@ button.close {
 	box-shadow: 0 5px 15px rgba(0,0,0,.5)
 }
 .modal-sm {
-	width: 490px
+	width: 520px
 }
 }
 @media (min-width:992px) {

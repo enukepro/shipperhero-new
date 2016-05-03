@@ -1,18 +1,21 @@
 /* CSS Document */
+.padding {
+  padding: 0px !important; }
+
 .light {
   font-family: 'fira_sanslight'; }
 
 .bold {
   font-family: 'fira_sansbold'; }
 
-.medium, .banner_text h1, .banner_text h2, .con_how_work h1, .con_how_work .con_how_b h2, .res_count, .page_tittle h1, .create_form_right h1, .create_form_right h2, .create_form_right h3, .create_form_right h4, .save_d, .next_d, .previous_d, .profile_button .next_d, .profile_button .previous_d, .pro_edit, .pro_change, .carrire_add .next_d, .carrire_add .previous_d, .carrie_chan, .carrie_new, .confirm_view, .confirm_cancle .confirm_edit, .confirm_cancle .confirm_cancle, .confirm_popup_button .confirm_save_popup, .confirm_popup_button .confirm_cancle_popup, .delivered_view, .carrir_add_user .delivered_view, .pending_viewb, .pending_buttonn .confirm_save_popup, .pending_buttonn .confirm_cancle_popup {
+.medium, .banner_text h1, .banner_text h2, .con_how_work h1, .con_how_work .con_how_b h2, .res_count, .page_tittle h1, .create_form_right h1, .create_form_right h2, .create_form_right h3, .create_form_right h4, .save_d, .next_d, .previous_d, .profile_button .next_d, .profile_button .previous_d, .pro_edit, .pro_change, .carrire_add .next_d, .carrire_add .previous_d, .carrie_chan, .carrie_new, .confirm_view, .confirm_cancle .confirm_edit, .confirm_cancle .confirm_cancle, .confirm_popup_button .confirm_save_popup, .confirm_popup_button .confirm_cancle_popup, .delivered_view, .carrir_add_user .delivered_view, .pending_viewb, .pending_buttonn .confirm_save_popup, .pending_buttonn .confirm_cancle_popup, .blog_first_b h1 {
   font-family: 'fira_sansmedium'; }
 
 .semi {
   font-family: 'fira_sanssemibold';
   font-sizr: 16px; }
 
-.reg, .header_account, .header_account1, .banner_text p, .banner_text a, .content_video h1, .content_video h2, .content_video ul li, .ready_b h1, .ready_b a, .con_how_work .con_how_b p, .footer_menu ul li a, .copyright_b, .c_number h1, .create_form_right span input, .create_form_right span textarea, .c_last_radio, .tracking_check li, .pro_box h1 span, .pro_header h1 span, .profile_box ul li span, .tab_box_profile span input, .tab_box_profile span textarea, .tab_box_profile cite select, .profile_b_b li a, .profile_setting, .carrire_popup h1, .carrire_popup span input, .carrire_popup span textarea, .carrire_popup cite select, .carriers_box_lsiting table tr td, .confirm_pro_box ul li span, .confirm_pop_edit ul li span, .delivered_bottom_tracking ul li span, .delivered_bottom_tracking ul li cite, .transit_tracking ul li span, .transit_tracking ul li cite, .pend_form span input, .pend_form a, .blog_first_b p, .blog_b12 h1, .carrie_boxx h1, .carrie_boxx h2 {
+.reg, .book_form .btn-facebook, .book_form .btn-twitter, .book_form .btn-linkdin, .header_account, .header_account1, .banner_text p, .banner_text a, .content_video h1, .content_video h2, .content_video ul li, .ready_b h1, .ready_b a, .con_how_work .con_how_b p, .footer_menu ul li a, .copyright_b, .c_number h1, .create_form_right span input, .create_form_right span textarea, .c_last_radio, .tracking_check li, .pro_box h1 span, .pro_header h1 span, .profile_box ul li span, .tab_box_profile span input, .tab_box_profile span textarea, .tab_box_profile cite select, .profile_b_b li a, .profile_setting, .carrire_popup h1, .carrire_popup span input, .carrire_popup span textarea, .carrire_popup cite select, .carriers_box_lsiting table tr td, .confirm_pro_box ul li span, .confirm_pop_edit ul li span, .delivered_bottom_tracking ul li span, .delivered_bottom_tracking ul li cite, .transit_tracking ul li span, .transit_tracking ul li cite, .pend_form span input, .pend_form a, .blog_first_b p, .blog_b12 h1, .blog_b12 ul li, .carrie_boxx h1, .carrie_boxx h2, .trucking_updatedd h1, .trucking_check_all h1, .trucking_pop_b ul h1, .trucking_pop_b ul li span, .cinfirm_d_b.hasDatepicker {
   font-family: 'fira_sansregular'; }
 
 body {
@@ -97,20 +100,65 @@ html {
     background-color: #3b5998;
     border-color: #3b5998;
     color: #fff;
-    padding: 7px 16px;
-    text-align: center;
+    padding: 0 3px;
+    text-align: left;
     width: 100%;
     float: left;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; }
+    .book_form .btn-facebook i {
+      border-right: 1px solid #173574;
+      font-size: 14px;
+      padding: 8px 7px 8px;
+      margin: 0 3px 0 0; }
+      .book_form .btn-facebook i:hover {
+        background: none !important; }
   .book_form .btn-twitter {
-    background-color: #df4b38;
+    background-color: #ba2613;
     border-color: #df4b38;
     color: #fff;
-    padding: 7px 16px;
-    text-align: center;
+    padding: 0 3px;
+    text-align: left;
     width: 100%;
     float: left;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; }
+    .book_form .btn-twitter i {
+      border-right: 1px solid #920000;
+      font-size: 14px;
+      padding: 8px 7px 8px;
+      margin: 0 3px 0 0; }
+      .book_form .btn-twitter i:hover {
+        background: none !important; }
+  .book_form .btn-linkdin {
+    background-color: #005b99;
+    border-color: #df4b38;
+    color: #fff;
+    padding: 0 3px;
+    text-align: left;
+    width: 100%;
+    float: left;
+    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; }
+    .book_form .btn-linkdin i {
+      border-right: 1px solid #173574;
+      font-size: 14px;
+      padding: 8px 7px 8px;
+      margin: 0 3px 0 0; }
+      .book_form .btn-linkdin i:hover {
+        background: none !important; }
   .book_form cite {
     float: left;
     font-size: 20px;
@@ -119,19 +167,22 @@ html {
     text-transform: uppercase;
     width: 100%;
     color: #303030; }
-  .book_form span input {
+  .book_form span {
     width: 100%;
-    float: left;
-    padding: 0 0;
-    margin: 0px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    height: 42px;
-    margin: 0 0 17px;
-    border-radius: 0 !important;
-    box-shadow: none !important; }
-  .book_form span select {
-    height: 43px !important; }
+    float: left; }
+    .book_form span input {
+      width: 100%;
+      float: left;
+      padding: 0 0;
+      margin: 0px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      height: 42px;
+      margin: 0 0 17px;
+      border-radius: 0 !important;
+      box-shadow: none !important; }
+    .book_form span select {
+      height: 43px !important; }
   .book_form article {
     float: left;
     width: 100%; }
@@ -147,6 +198,11 @@ html {
     float: left;
     padding: 10px 0;
     margin: 14px 0 0; }
+    
+    .book_form .btn-primary1[disabled] {
+  background: #F39194;
+  cursor: not-allowed;
+}
 
 .book_sing_up {
   width: 100%;
@@ -258,7 +314,7 @@ html {
     font-size: 17px;
     line-height: 21px;
     margin: 12px 0 20px;
-    width: 87%; }
+    width: 100%; }
   .banner_text figure img {
     width: 100%; }
   .banner_text a {
@@ -490,12 +546,14 @@ html {
   .footer_menu ul li a {
     color: #fff;
     font-size: 17px;
+    font-weight: normal;
     line-height: 30px;
     margin: 0 25px 0 0; }
 
 .copyright_b {
   color: #fff;
   font-size: 15px;
+  font-weight: normal;
   line-height: 30px;
   margin: 0;
   float: left;
@@ -656,22 +714,36 @@ html {
     color: #1a1515;
     font-size: 15px;
     margin: 0 0 13px;
-    padding: 0; }
+    padding: 0;
+    width: 100%;
+    float: left; }
   .create_form_right h3 {
     color: #7c7474;
     font-size: 15px;
-    margin: 0 0 13px;
-    padding: 0; }
+    margin: 5px 0 8px;
+    padding: 0;
+    float: left;
+    width: 100%; }
   .create_form_right h4 {
     color: #7c7474;
     font-size: 15px;
     margin: 12px 0 0;
-    padding: 0; }
+    padding: 0;
+    width: 100%;
+    float: left; }
+  .create_form_right code {
+    margin: 0 13px 0 0;
+    float: left; }
+  .create_form_right select {
+    width: 100%;
+    height: 38px; }
 
 .c_last_radio {
   color: #7c7474;
   float: left;
   width: 100%; }
+  .c_last_radio input {
+    margin: 0 8px 0 0; }
 
 .button_c_outer {
   margin: 20px 0 0 0;
@@ -729,12 +801,13 @@ html {
   background: #ececec url("../images/calendar.png") no-repeat scroll 99% 50% !important; }
 
 .shipment_bb {
+  overflow: hidden;
   float: left; }
   .shipment_bb li {
     float: left;
     list-style: outside none none;
     margin: 0 15px;
-    width: 130px; }
+    width: 207px; }
     .shipment_bb li span input {
       margin: 0; }
 
@@ -752,7 +825,9 @@ html {
 
 /******************************************profile******************************************************************/
 .tracking_check {
-  float: left; }
+  float: left;
+  position: relative;
+  z-index: 2; }
   .tracking_check li {
     color: #1a1515;
     font-size: 15px;
@@ -804,7 +879,9 @@ html {
   margin: 22px 0 0; }
 
 .profile_box {
-  border: 1px solid #93caf0; }
+  border: 1px solid #93caf0;
+  float: left;
+  width: 100%; }
   .profile_box ul {
     margin: 0px; }
     .profile_box ul li {
@@ -812,12 +889,17 @@ html {
       color: #000;
       font-size: 17px;
       border-bottom: 1px solid #93caf0;
-      padding: 11px 21px; }
+      padding: 4px 21px;
+      float: left;
+      width: 100%; }
       .profile_box ul li:last-child {
         border-bottom: none; }
       .profile_box ul li span {
         float: left;
         width: 40%; }
+      .profile_box ul li p {
+        float: left;
+        width: 60%; }
 
 .profile_box_outer {
   margin: 30px 0;
@@ -953,9 +1035,16 @@ html {
     color: #fff; }
 
 .header_menn .dropdown-menu {
-  background-color: #ff5f5f !important;
+  background: #2069c8 !important;
   color: #fff;
   font-size: 14px; }
+
+.header_menn .dropdown-menu li a {
+  line-height: 32px;
+  border-bottom: 2px solid #205397; }
+
+.header_menn .dropdown-menu li {
+  padding: 0 11px; }
 
 .profile_setting ul li a {
   color: #000 !important; }
@@ -1409,7 +1498,7 @@ html {
       right: 11px;
       top: 1px; }
   .deli_tracking i input {
-    width: 30%;
+    width: 57%;
     border: 1px solid #ccc;
     padding: 5px;
     font-style: normal; }
@@ -1511,7 +1600,7 @@ html {
         right: 11px;
         top: 7px; }
     .transit_vieww section i input {
-      width: 30%;
+      width: 83%;
       border: 1px solid #ccc;
       padding: 5px;
       font-style: normal; }
@@ -1876,9 +1965,10 @@ html {
     margin: 0 5px 0 0; }
 
 .blog_b12 {
-  border-bottom: 1px solid #ccc;
-  padding: 0 0 9px;
-  margin: 0 0 31px; }
+  padding: 15px 20px;
+  margin: 0 0 31px;
+  border: 1px solid #ccc;
+  border-top: none; }
   .blog_b12 h1 {
     color: #033a60;
     font-size: 20px;
@@ -1910,6 +2000,14 @@ html {
     padding: 7px 0 3px;
     text-align: left;
     margin: 0 0 8px; }
+  .blog_b12 ul li {
+    color: #black;
+    font-size: 14px;
+    list-style-position: inside;
+    line-height: 12px;
+    padding: 7px 0 3px;
+    text-align: left;
+    margin: 0 0 8px; }
 
 .carrie_boxx h1 {
   color: #033a60;
@@ -1931,46 +2029,296 @@ html {
   text-align: left;
   margin: 12px 0; }
 
-/*# sourceMappingURL=style.css.map */
+/*************************************trucking css*******************************************************/
+.trucking_updatedd h1 {
+  color: #033a60;
+  font-size: 20px;
+  padding: 0 0 0;
+  text-align: left;
+  margin: 0 0; }
+.trucking_updatedd span {
+  float: left;
+  margin: 20px 0 10px;
+  width: 100%; }
+  .trucking_updatedd span h2 {
+    color: #033a60;
+    font-size: 16px;
+    width: 47px;
+    padding: 0 0 0;
+    text-align: left;
+    margin: 5px 8px 0 0;
+    float: left; }
+  .trucking_updatedd span input {
+    width: 76%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-style: normal; }
+.trucking_updatedd h2 {
+  color: #033a60;
+  font-size: 16px;
+  padding: 0 0 0;
+  width: 47px;
+  text-align: left;
+  margin: 5px 8px 0 0;
+  float: left; }
+.trucking_updatedd section i {
+  width: 36%;
+  float: left;
+  margin: 0 5px;
+  font-style: normal; }
+  .trucking_updatedd section i input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-style: normal; }
+  .trucking_updatedd section i select {
+    width: 100%;
+    padding: 5px; }
+  .trucking_updatedd section i textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-style: normal; }
 
-.modal-backdrop{
-  z-index: 0 !important;
-}
-.edit-modal-cont ul{
-  border: medium none !important;
-  margin: 0 0 17px;
-}
-.edit-modal-cont li a{
-  border: medium none !important;
-  color: #000;
-  font-size: 17px !important;
-  margin: 0 16px !important;
-  padding: 0 !important;
-}
-.error {
-  color: red;
-}
-.book_form .btn-primary1[disabled] {
-  background: #F39194;
-  cursor: not-allowed;
-}
-@media (min-width: 768px){
-.modal-dialog {
-    margin: 45px auto;
-}
-}
-.book_form span input{
-  margin-bottom: 10px;
-}
-.form-group {
-  position: relative;
-}
-.book_form .error {
+.trucking_updatedd section i:first-child {
+  margin-left: 0; }
+
+.trucking_updatedd section i:last-child {
+  margin-right: 0; }
+
+.trucking_m_outer {
+  border: 1px solid #ccc;
+  float: left;
+  margin: 0 0 29px;
+  padding: 14px; }
+
+.trucking_check_all h1 {
+  color: #033a60;
+  font-size: 20px;
+  padding: 0 0 0;
+  text-align: left;
+  float: left;
+  margin: 0 19px 0 0; }
+
+.trucking_pop_b ul {
+  border-bottom: 1px solid #ccc;
+  float: left;
+  margin: 0 0 20px;
+  padding: 0 0 8px;
+  width: 100%; }
+  .trucking_pop_b ul h1 {
+    color: #033a60;
+    font-size: 20px;
+    float: left;
+    text-align: left;
+    width: 100%;
+    background: #f1f1f1 none repeat scroll 0 0;
+    margin: 3px 0 9px;
+    padding: 9px 16px; }
+  .trucking_pop_b ul li {
+    list-style: none;
+    color: #000;
+    font-size: 14px;
+    float: left;
+    margin: 0 12px;
+    width: 44%; }
+    .trucking_pop_b ul li span {
+      color: #033a60;
+      font-size: 16px; }
+.trucking_pop_b section {
+  float: left;
+  margin: 0 0 11px;
+  width: 100%; }
+  .trucking_pop_b section label {
+    color: #000;
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    float: left;
+    margin: 0; }
+  .trucking_pop_b section input {
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    padding: 5px;
+    height: 33px;
+    font-style: normal; }
+  .trucking_pop_b section i {
+    width: 47%;
+    float: left;
+    margin: 0 5px;
+    font-style: normal; }
+    .trucking_pop_b section i input {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-style: normal; }
+    .trucking_pop_b section i select {
+      width: 100%;
+      padding: 5px; }
+  .trucking_pop_b section textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    height: 100px;
+    font-style: normal; }
+
+.trucking_pop_b i:first-child {
+  margin-left: 0; }
+
+.trucking_pop_b i:last-child {
+  margin-right: 0; }
+
+.trucking_model {
+  width: 606px !important; }
+
+.trucking_check_all {
+  float: left;
+  width: 100%; }
+
+.dropdown-last {
+  background-color: #ef720c;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff !important;
+  text-align: center;
+  font-size: 15px;
+  padding: 1px 20px 2px !important;
+  margin: 12px 11px 4px;
+  text-decoration: none; }
+
+.dropdown-last:hover {
+  background: #fff;
+  color: #303030 !important; }
+
+.header_menn .dropdown-menu {
+  border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  -moz-border-radius: 6px !important; }
+
+.header_menn .dropdown-menu li:last-child a {
+  border-bottom: none; }
+
+.account_button .modal-sm {
+  width: 590px; }
+
+#accordion .panel-heading {
+  padding: 0; }
+
+#accordion .panel-title > a {
+  display: block;
+  padding: 0.4em 0.6em;
+  outline: none;
+  font-weight: bold;
+  text-decoration: none; }
+
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before {
+  content: "\e113";
+  float: left;
+  font-family: 'Glyphicons Halflings';
+  margin-right: 1em; }
+
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before {
+  content: "\e114"; }
+
+#accordion .panel-heading {
+  border: 1px solid #ccc; }
+
+.shipment_bb_hide_show {
+  overflow: hidden;
+  margin: 8px 0 0;
+  float: left; }
+  .shipment_bb_hide_show li {
+    float: left;
+    list-style: outside none none;
+    margin: 0 5px 0 0;
+    width: 81px; }
+    .shipment_bb_hide_show li span input {
+      margin: 0; }
+
+.shipment_bb > li:nth-child(2) {
+  width: 53px; }
+
+.shipment_bb > li:nth-child(5) {
+  width: 53px; }
+
+.militry_time {
+  position: relative; }
+  .militry_time select {
+    -moz-appearance: none;
+    background: #ececec;
+    border: none; }
+
+.militry_time:after {
   position: absolute;
-  bottom: -17px;
-  font-size: 12px;
-  left: 5px;
-}
-.alert-danger {
-  color: #FF0500;
-}
+  right: 5px;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background: url(../images/select-arrow.png) no-repeat; }
+
+.tracking_last_b {
+  overflow: hidden;
+  float: left; }
+  .tracking_last_b li {
+    float: left;
+    list-style: outside none none;
+    margin: 0;
+    width: 124px; }
+    .tracking_last_b li span input {
+      margin: 0; }
+
+.mil_tracking_time {
+  position: relative; }
+  .mil_tracking_time select {
+    -moz-appearance: none;
+    background: #ececec;
+    border: none;
+    padding: 0 7px; }
+  .mil_tracking_time:after {
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background: url(../images/select-arrow.png) no-repeat; }
+
+.tracking_last_b_2 {
+  overflow: hidden;
+  float: left; }
+  .tracking_last_b_2 li {
+    float: left;
+    list-style: outside none none;
+    margin: 0;
+    width: 124px; }
+    .tracking_last_b_2 li span input {
+      margin: 0; }
+
+.mil_tracking_time_2 {
+  position: relative; }
+  .mil_tracking_time_2 select {
+    -moz-appearance: none;
+    background: #ececec;
+    border: none;
+    padding: 0 7px; }
+  .mil_tracking_time_2:after {
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background: url(../images/select-arrow.png) no-repeat; }
+
+.cinfirm_d_b.hasDatepicker {
+  font-size: 11px; }
+
+.shipment_bb_hide_show > li:last-child {
+  margin: 0;
+  width: 48px; }
+
+/*# sourceMappingURL=style.css.map */

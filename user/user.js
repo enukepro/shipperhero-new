@@ -85,7 +85,7 @@ userApp.factory('retrieveTokens', ['userAuthService', '$location', '$q', 'notifi
           
           if(response.status === 401){
               //console.log(response);
-              if(angular.isUnDefined(response.data.error)) {
+              if(angular.isUndefined(response.data.error)) {
                 
                 notificationService.setMessage('authorizationError', 'Your session has expired. Please login again.');
                 $location.path('/login');
@@ -155,7 +155,7 @@ userApp.controller('UserCtrl', ['userAuthService','$scope', '$uibModal', '$locat
     /** FB login **/
     $scope.fbLogin = function() {
      // $location.url('/success');
-     window.open(baseUrl+'auth/facebook?auth_origin_url='+ encodeURIComponent(redirectUrl) +'&user_role=carrier');
+     window.open(baseUrl+'auth/facebook?auth_origin_url='+ encodeURIComponent(redirectUrl) +'&user_role=carrier&redirect_url=logisticshero.com');
       
       /*Facebook.login(function(response) {
         
@@ -184,7 +184,7 @@ userApp.controller('UserCtrl', ['userAuthService','$scope', '$uibModal', '$locat
     /** G+ Login **/
     $scope.gplusLogin = function() {
       
-      $window.open(baseUrl+'auth/google_oauth2?auth_origin_url='+ encodeURIComponent(redirectUrl) +'&user_role=carrier&redirect_url=logistics.com');
+      $window.open(baseUrl+'auth/google_oauth2?auth_origin_url='+ encodeURIComponent(redirectUrl) +'&user_role=carrier&redirect_url=logisticshero.com');
       /*GooglePlus.login().then(function (authResult) {
 
           //if(authResult.status.signed_in == 'true') {
@@ -217,6 +217,50 @@ userApp.controller('UserCtrl', ['userAuthService','$scope', '$uibModal', '$locat
       });*/
     }
     
+      /** Linkedin Login **/
+    $scope.linkedinLogin = function() {
+      
+      $window.open(baseUrl+'auth/linkedin?auth_origin_url='+ encodeURIComponent(redirectUrl) +'&user_role=carrier&redirect_url=logistics.com');
+      /* if(!_linkedinClicked) {
+         
+          onLinkedInLoad();
+          _linkedinClicked = true;
+       }
+      
+       IN.UI.Authorize().place();*/
+    }
+  
+    /** Linkedin callback after successful login **/
+    $scope.getLinkedInData = function() {
+
+      IN.API.Profile("me").fields(
+        [ "id", "firstName", "lastName", "pictureUrl", "emailAddress",
+        "publicProfileUrl" ]).result(function(result) {
+        
+          var _user = {
+            first_name: result.values[0].firstName,
+            last_name: result.values[0].lastName,
+            email: result.values[0].emailAddress,
+            password: result.values[0].emailAddress,
+            password_confirmation: result.values[0].emailAddress,
+            user_type: 'carrier'
+          };
+         //Register User
+         userAuthService.register(_user)
+          .success(function(data){
+
+            notificationService.setMessage('success', 'Registration Successful!');
+            $location.path('/myprofile');
+          })
+          .error(function(data, response) {
+            notificationService.setMessage('error', data.text.full_messages[0]);
+            //console.log(data);
+          });
+        
+      }).error(function(err) {
+        //$scope.error = err;
+      });
+    }
 
 
 
@@ -261,7 +305,9 @@ userApp.controller('ProfileCtrl', ['userAuthService', '$scope', '$location', 'no
     $scope.open = function() {
       
       modalInstance = $uibModal.open({
-        animation: false,
+        animation: true,
+        backdrop:false,
+      backdropClass:'fade',
         templateUrl: 'user/editprofile.html',
         controller: 'ProfileEditModalCtrl'
       });

@@ -29,6 +29,9 @@ rfpApp.config(['$routeProvider', function ($routeProvider) {
        	templateUrl:'rfp/pending.html',
         controller:'PendingRfpCtrl'
 
+  }).when('/viewall', {
+    templateUrl: 'rfp/viewall.html',
+    controller: 'ViewAllRfpCtrl'
   });
   }]);
 /******************************
@@ -830,4 +833,203 @@ $scope.getSelectedAddress=function(index){
                             });
   
 }]);
+/******************************
+Controller Name :- ViewAllRfpCtrl
+Description:- Used to populate all record of rfp
 
+*******************************/
+
+rfpApp.controller('ViewAllRfpCtrl', ['$scope', '$http','$window','$uibModal','$route', '$routeParams','formDataStorageService','notificationService',function ($scope,$http,$window,$uibModal,$route, $routeParams,formDataStorageService,notificationService) {
+ 
+  $scope.items = {
+    input: {limit: 5, status: ''},
+    data: []
+  };  
+  
+  //detail of the row/item
+  $scope.detailItem = {};
+  
+  //currently open row
+  $scope.selected = null;
+  $scope.prevSelected = null;
+  //page parameters to be initialized from request's response
+  $scope.currentPage = null;
+  $scope.perPage = 5;
+  $scope.totalItems;
+  //page parameters end
+  var modalInstance;
+    
+  var retrieveData = function() {
+  
+    $http.get(baseUrl+'api/v1/shipments.json?limit='+$scope.items.input.limit+'&status='+$scope.items.input.status+'&page='+$scope.currentPage).success(function(data){
+      $scope.totalItems = data.total;
+      $scope.items.data = data.results;
+    });
+  }
+  
+  //retrieve details of selected row
+  var retrieveDetails = function(index) {
+    
+    $http.get(baseUrl+'api/v1/shipments/'+ $scope.items.data[index].id +'.json').success(function(data){
+
+      $scope.detailItem = data;
+      $scope.bidData = data.proposals;
+    });    
+  }
+  
+  // Open modal for edit shipment detail
+
+   $scope.open = function(index) {
+      var id = formDataStorageService.setRecordId(index);
+      modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'rfp/edit.html',
+        controller: 'RfpEditModalCtrl',
+        size: 'lg'
+      });
+    }
+
+
+  $scope.getDateObj = function(string) {
+    
+    return (new Date(string));
+  }
+  
+  $scope.pageChanged = function() {
+    $scope.selected = null;
+    $scope.prevSelected = null;
+    retrieveData();
+  }
+  
+  $scope.setVisible = function(index) {
+   if($scope.prevSelected == index)
+    {
+       $scope.selected = null;
+       $scope.prevSelected = null;
+    }else{
+      retrieveDetails(index);
+      $scope.selected = index;
+      $scope.prevSelected = index;
+    }
+  }  
+  
+  $scope.isVisible = function(index) {
+    return $scope.selected == index ? true : false;
+  }
+
+//This function will change the state of shipment
+
+  /*$scope.pauseRequest = function(index) {
+    
+      var responseData = formDataStorageService.pause(index,'pause').success(function(response) {
+             console.log(response);
+          }).error(function(data, response) {
+             console.log(data);
+          });
+  }  */
+   // Open pause confirmation dialog box 
+
+   $scope.pauseConfirmation = function(index) {
+      var id = formDataStorageService.setRecordId(index);
+      modalInstance = $uibModal.open({
+        animation: false,
+        templateUrl: 'rfp/confirmation/pause_rfp.html',
+        controller: 'SetStatusCtrl',
+        size: 'sm'
+      });
+    }
+  // Open delete confirmation dialog box 
+
+   $scope.deleteConfirmation = function(index) {
+      var id = formDataStorageService.setRecordId(index);
+      modalInstance = $uibModal.open({
+        animation: false,
+        templateUrl: 'rfp/confirmation/delete_rfp.html',
+        controller: 'SetStatusCtrl',
+        size: 'sm'
+      });
+    }
+
+   $scope.acceptConfirmation = function(index,shipment_id) {
+      var id = formDataStorageService.setRecordId(index);
+      var id = formDataStorageService.setShipmentId(shipment_id);
+      modalInstance = $uibModal.open({
+        animation: false,
+        templateUrl: 'rfp/confirmation/accept_bid.html',
+        controller: 'SetStatusCtrl',
+        size: 'sm'
+      });
+    }
+
+  $scope.contactDetail = function(index) {
+     var id = formDataStorageService.setRecordId(index);
+      modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'shipments/contact_dialog.html',
+        controller: 'ShipmentsmodalCtrl'
+      });
+  }
+ 
+  //default page data load
+  retrieveData();
+}]);
+
+/******************************
+Controller Name :- SetStatusCtrl
+Description:- Used to open and close Modal as well as set status
+*******************************/
+
+
+rfpApp.controller('SetStatusCtrl', ['$scope','$route','$rootScope','$uibModalInstance','$uibModalStack','$uibModal','$injector', '$http', '$routeParams','formDataStorageService','notificationService', function ($scope,$route,$rootScope,$uibModalInstance,$uibModalStack,$uibModal,$injector,$http, $routeParams,formDataStorageService,notificationService) {
+ 
+ var modalInstance;
+
+ //This function is called when sDiscard button is clicked. This will remove Model from UI
+
+$scope.close = function() {
+    $uibModalInstance.dismiss();
+  }
+
+     //change the state of shipment
+  $scope.pauseRequest = function() {
+     $uibModalInstance.dismiss();
+    var index = formDataStorageService.getRecordId();
+    var responseData = formDataStorageService.pause(index,'pause').success(function(response) {
+             notificationService.setMessage('success', 'Shipment paused!');
+          }).error(function(response) {
+              notificationService.setMessage('error', 'Shipment could not paused!');
+        });  
+  }
+  $scope.postRequest = function() {
+     $uibModalInstance.dismiss();
+    var index = formDataStorageService.getRecordId();
+    var responseData = formDataStorageService.pause(index,'propose').success(function(response) {
+             notificationService.setMessage('success', 'Shipment posted!');
+          }).error(function(response) {
+              notificationService.setMessage('error', 'Shipment could not posted!');
+        });  
+  }
+   //Delete the shipment
+   $scope.deleteShipment = function(index) {
+    $uibModalInstance.dismiss();
+    var index = formDataStorageService.getRecordId();
+      $http.delete(baseUrl+'api/v1/shipments/'+index+'.json').success(function(data){
+        notificationService.setMessage('success', 'Your shipment has been deleted!');
+        $route.reload();
+      }).error(function(response) {
+        notificationService.setMessage('error', 'Shipment could not deleted!');
+        });  
+  }
+//Accept bid on the shipment
+  $scope.acceptBid = function(index) {
+    this.close();
+      var index = formDataStorageService.getRecordId();
+      var shipment_id = formDataStorageService.getShipmentId();
+      var responseData = formDataStorageService.acceptProposal(index,shipment_id,'propose').success(function(response) {
+              notificationService.setMessage('success', 'Bid accepted!');
+          }).error(function(response) {
+              notificationService.setMessage('error', 'Bid could not accepted!');
+        });  
+  }    
+
+}]);

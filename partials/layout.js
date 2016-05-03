@@ -3,11 +3,10 @@ angular.module('myApp.layout', [])
     
     $scope.welcomeMessage = '';
     
-    /*$scope.logout = function() {
-      console.log("logout");
+    $scope.logout = function() {
       userAuthService.logout();
       $location.path('/');
-    }*/
+    }
   
     $scope.getWelcomeMessage = function() {
        var last_name = '';

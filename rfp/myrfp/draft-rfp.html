@@ -25,30 +25,29 @@
   
     <tr ng-repeat="item in drafts.data">
        <td>{{item.id}}</td>
-          <td>{{item.pickup_address}}</td>
-          <td>{{item.delivery_address}}</td>
-          <td>{{item.bids_count}}</td>
-          <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
-          <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
+       <td>{{item.pickup_address}}</td>
+       <td>{{item.delivery_address}}</td>
+       <td>{{item.bids_count}}</td>
+       <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
+       <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
        <td> 
-    <button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
-      contact</button>
-          <div id="smallModal-5" class="modal fade" tabindex="-2" role="dialog">
-         <div class="modal-dialog modal-sm">
-            <div class="modal-content profile_out">
-            <div class="modal-body ">
-
-      <div class="pro_box">
+        <button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
+        contact</button>
+        <!--div id="smallModal-5" class="modal fade" tabindex="-2" role="dialog">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content profile_out">
+        <div class="modal-body ">
+        <div class="pro_box">
           <figure><img src="images/profile_p.jpg"></figure>
-        <h1>Welcome john malik  ! <span>Current User</span></h1>
-           </div></div></div>  </div>  </div> 
+          <h1>Welcome john malik  ! <span>Current User</span></h1>
+          </div></div></div>  </div>  </div--> 
           <div class="confirm_view"><a href="#">View</a></div>
-    </td> 
+       </td> 
 	 </tr>
    </tbody>
     <tbody ng-show="drafts.data.length==0">
         <tr><td colspan="7">No Data Found!</td></tr>
-      </tbody>
+    </tbody>
 	 </table>
    </div>
    </div>

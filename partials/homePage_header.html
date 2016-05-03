@@ -1,122 +1,115 @@
-<div class="header_box"><!--header start-->
-   <div class="header_box_inn">
+ <div class="header_box"><!--header start-->
+ <div class="header_box_inn">
      <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-sm-4 col-md-9">
-          <div class="logo">
-            <a href="index.html"><img src="images/logo.png">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-8 col-md-3 col-lg-push-3">
-          <div class="account_button">
-            <!-- Small modal -->
-            <button class="btn btn-primary header_account"  data-toggle="modal" data-target="#smallModal">
-              <i class="fa fa-lock"></i>Login</button>
-              <div id="smallModal" class="modal fade" tabindex="-1" role="dialog" my-modal>
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content">
-                    <div class="modal-body clearfix">
-                      <div class="book_form">
-                      <form  name="loginForm">
-                       <div class="col-lg-12 "><h1>Login Shipper Hero  Account </h1></div>
-                        <div class="col-lg-6 col-sm-6 col-md-6"><a href="" class="btn-facebook" ng-click="fbLogin()">Sign in with facebook</a></div>
-                        <div class="col-lg-6 col-sm-6 col-md-6"><a href="" class="btn-twitter" ng-click="gplusLogin()">Sign in with google</a></div>
-                        <div class="col-lg-12"><cite>or</cite></div>
-                        
-                       <div class="col-md-12 alert alert-danger" role="alert" ng-show="notificationService.hasOneTimeMessage('error')">
-                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <span class="sr-only">Error:</span>
-                             {{notificationService.getOneTimeMessage('error')}}
-                       </div> 
-                       <div class="col-md-12" ng-show="notificationService.hasOneTimeMessage('success')">
-                        <div class="alert alert-success">{{notificationService.getOneTimeMessage('success')}}</div>
-                       </div> 
+    
+   <div class="col-lg-6 col-sm-4 col-md-9"><div class="logo"><a href="index.html"><img src="images/logo.png"></a></div></div>
+  <div class="col-lg-3 col-sm-8 col-md-3 col-lg-push-3">
+  
+   <div class="account_button">
+    <!-- Small modal -->
+    <button class="btn btn-primary header_account" data-toggle="modal" data-target="#smallModal">
+  <i class="fa fa-lock"></i>Login</button>
+    <div id="smallModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+           <div class="book_form">
+            <form  name="loginForm">
+              <div class="col-lg-12"><h1>Login Shipper Hero  Account </h1></div>
+                  <div class="col-lg-4 col-sm-4 col-md-4"><a href="" class="btn-facebook" ng-click="fbLogin()"> <i class="fa fa-facebook" ></i> Login  with facebook</a></div>
+                   <div class="col-lg-4 col-sm-4 col-md-4"><a href="" class="btn-twitter" ng-click="gplusLogin()">  <i class="fa fa-google" aria-hidden="true" ></i> Login  with google</a></div>
+                   <div class="col-lg-4 col-sm-4 col-md-4"><a href="" class="btn-linkdin" ng-click="linkedinLogin()"><i class="fa fa-linkedin" ></i>Login  with Linkedin </a></div>
+           
+                   <div class="col-lg-12"><cite>or</cite></div>
+                  <div class="col-md-12 alert alert-danger" role="alert" ng-show="notificationService.hasOneTimeMessage('error')">
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                       <span class="sr-only">Error:</span>
+                          {{notificationService.getOneTimeMessage('error')}}
+                   </div> 
+                   <div class="col-md-12" ng-show="notificationService.hasOneTimeMessage('success')">
+                   <div class="alert alert-success">{{notificationService.getOneTimeMessage('success')}}</div>
+                  </div> 
+                               
+                  <div class="col-md-12" ng-show="notificationService.hasOneTimeMessage('authorizationError')">
+                   <div class="alert alert-danger">{{notificationService.getOneTimeMessage('authorizationError')}}</div>
+                  </div> 
                        
-                        <div class="col-md-12" ng-show="notificationService.hasOneTimeMessage('authorizationError')">
-                        <div class="alert alert-danger">{{notificationService.getOneTimeMessage('authorizationError')}}</div>
-                       </div> 
-                       
-                        <div class="col-lg-12 form-group"><span><input  type="text" placeholder="User Name" ng-model="signin.email" class="form-control" required></span></div>
-                        <div class="col-lg-12 form-group"><span><input  type="password" ng-model="signin.password" class="form-control" required></span></div>
-                        <div class="col-lg-12 form-group"><button class="btn-primary1" type="submit" data-dismiss="modal" ng-click="login()" ng-disabled="loginForm.$invalid || loggedIn"  class="form-control" required> Sign In </button></div>
-                        <div class="book_sing_up"><span><a href="">Forgot password?</a></span></div>
-                        </form>
-                      </div> 
-                    </div>
-                    <div class="modal-footer">
-                      <div class="text-center">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clearNotificationMessage()" >Cancel</button>
-                      </div>
-                    </div>
-                  </div>
+              <div class="col-lg-12"><span><input  type="text" placeholder="User Name" value="" name="User Name" ng-model="signin.email" class="form-control" required>
+           </span></div>
+              <div class="col-lg-12"><span><input  type="text" placeholder="Password" value="" name="Password" ng-model="signin.password" class="form-control" required></span></div>
+             <div class="col-lg-12"><button class="btn-primary1" type="submit" ng-click="login()" ng-disabled="loginForm.$invalid || loggedIn"  class="form-control" required> Sign In </button></div>
+                 <div class="book_sing_up">
+                 <span><a href="">Forgot password?</a></span>
+                 </div>
+                </form>
+           </div> 
+       </div>
+               <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clearNotificationMessage()">Cancel</button>
+                    
                 </div>
-              </div>    <!-- Small modal -->
-              <button class="btn btn-primary header_account1" data-toggle="modal" data-target="#smallModal2">
-                <i class="fa fa-user"></i>  Sign up</button>
-                <div id="smallModal2" class="modal fade" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-body clearfix">
-                       <div class="book_form">
-                       <form name="signUpForm">
-                       
-                        <div class="col-lg-12 "><h1>Create your Shipper Hero Account</h1></div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 " >
-                          <a href="" class="btn-facebook" ng-click="fbLogin()">Sign in with facebook</a>
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-md-6">
-                          <a href="" class="btn-twitter" ng-click="gplusLogin()">sign in with google</a>
-                        </div>
-                        <div class="col-lg-12"><cite>or</cite></div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group "><span><input  type="text" placeholder="First Name" value="" name="name" ng-model="user.first_name" class="form-control" required></span>
-                        <span class="error form-control" ng-show="errors.first_name">{{errors.first_name}}</span>
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input  type="text" placeholder="Last Name" value="" name="name" ng-model="user.last_name" class="form-control" required></span>
-                         <span class="error form-control" ng-show="errors.last_name">{{errors.last_name}}</span>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input class="form-control" type="text" placeholder="Email Address" value="" name="email" ng-model="user.email" class="form-control" required></span>
-                        <span class="error form-control" ng-show="errors.email">{{errors.email}}</span>
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input class="form-control" type="text" placeholder="Phone Number" value="" name="phone" ></span></div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input class="form-control" type="text" placeholder="Password" value="" name="Password" ng-model="user.password" class="form-control" required></span>
-                        <span class="error form-control" ng-show="errors.password">{{errors.password}}</span>
-                       
-                        </div>
-                         <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input class="form-control" type="text" placeholder="ConfirmPassword" value="" name="confirmPassword" ng-model="user.password_confirmation" class="form-control" required></span>
-                        <span class="error form-control" ng-show="errors.password_confirmation">{{errors.password_confirmation}}</span>
-                       
-                        </div>
-                        <div class="col-lg-6 col-sm-6 col-md-6 form-group">
-                         <span> <select  class="form-control" ng-model="user.user_type" required>
-                           <option value="">Type</option>
-                           <option value="shipper">Shipper</option>
-                           <option value="broker">Broker</option>
-                           <option value="carrier">Carrier</option>
-                           <option value="broker,carrier">Broker / Carrier</option>
-                         </select> </span>
-                         <span class="error form-control" ng-show="errors.user_type">{{errors.user_type}}</span>
-                         </div>
-
-                         <div class="col-lg-12 form-group"><article>
-                           <INPUT TYPE="Checkbox" Name="Browser" ID="C2" ng-model="checked" Value="Opera">Agree to term condition</article></div>
-                            <div class="col-lg-12 form-group"><button class="btn-primary1" type="submit" ng-click="signup()" ng-disabled="signUpForm.$invalid ||(!checked) "> Sign Up </button></div>
-                            </form>
-                          </div> 
-                        </div>
-                        <div class="modal-footer">
-                          <div class="text-center">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                          </div>
-                        </div> 
-                        
-                      </div> 
-                    </div> 
-                  </div>
-                </div>
-              </div> 
             </div>
-          </div>
         </div>
-      </div><!--header end-->
+    </div>
+  
+    <!-- Small modal -->
+    <button class="btn btn-primary header_account1" data-toggle="modal" data-target="#smallModal2">
+  <i class="fa fa-user"></i>  Sign up</button>
+    <div id="smallModal2" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+        <div class="book_form">
+          <form name="signUpForm">
+          <div class="col-lg-12"><h1>Create your Shipper Hero Account</h1></div>
+          <div class="col-lg-4 col-sm-4 col-md-4"><a href="" class="btn-facebook" ng-click="fbLogin()"> <i class="fa fa-facebook" ></i> Login  with facebook</a></div>
+            <div class="col-lg-4 col-sm-4 col-md-6"><a href="" class="btn-twitter" ng-click="gplusLogin()">  <i class="fa fa-google" aria-hidden="true"></i> Login  with google</a></div>
+             <div class="col-lg-4 col-sm-4 col-md-4"><a href="" class="btn-linkdin" ng-click="linkedinLogin()"><i class="fa fa-linkedin"></i>Login  with Linkedin </a></div>
+           
+           
+           
+               <div class="col-lg-12"><cite>or</cite></div>
+               <div class="col-lg-6 col-sm-6 col-md-6">
+                   <span><input  type="text" placeholder="First Name" value="" name="name" ng-model="user.first_name" class="form-control" required></span>
+                    <span class="error form-control" ng-show="errors.first_name">{{errors.first_name}}</span>
+               </div>
+               <div class="col-lg-6 col-sm-6 col-md-6"><span><input  type="text" placeholder="Last Name" value="" name="name" ng-model="user.last_name" class="form-control" required></span>
+               <span class="error form-control" ng-show="errors.last_name">{{errors.last_name}}</span></div>
+              
+            <div class="col-lg-6 col-sm-6 col-md-6"><span><input class="form-control" type="text" placeholder="Email Address" value="" name="email" ng-model="user.email" class="form-control" required></span>
+             <span class="error form-control" ng-show="errors.email">{{errors.email}}</span>
+           </div>
+
+           <div class="col-lg-6 col-sm-6 col-md-6"><span><input class="form-control" type="text" placeholder="Phone Number" value="" name="phone"></span>
+          
+           </div>
+         <div class="col-lg-6 col-sm-6 col-md-6"><span><input class="form-control" type="text" placeholder="Password" value="" name="Password" ng-model="user.password" class="form-control" required></span>
+           <span class="error form-control" ng-show="errors.password">{{errors.password}}</span>
+         </div>
+         <div class="col-lg-6 col-sm-6 col-md-6 form-group"><span><input class="form-control" type="text" placeholder="ConfirmPassword" value="" name="confirmPassword" ng-model="user.password_confirmation" class="form-control" required></span>
+            <span class="error form-control" ng-show="errors.password_confirmation">{{errors.password_confirmation}}</span>
+         </div>
+
+       <div class="col-lg-6 col-sm-6 col-md-6">
+             <span> <select class="form-control ng-pristine ng-valid ng-touched" ng-model="user.user_type" required>
+          <option value="">Type</option>
+          <option value="shipper">Shipper</option>
+          <option value="broker">Broker</option>
+          <option value="carrier">Carrier</option>
+          <option value="broker,carrier">Broker / Carrier</option>
+          </select> </span>
+            <span class="error form-control" ng-show="errors.user_type">{{errors.user_type}}</span>
+          </div>
+      
+        <div class="col-lg-12"><button class="btn-primary1" type="submit"  ng-click="signup()" ng-disabled="signUpForm.$invalid "> Sign Up </button></div>
+        </form>
+    </div> 
+   </div>
+               <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clearNotificationMessage()">Cancel</button>
+                    
+                </div> 
+
+                 </div> </div> </div></div></div> </div></div>
+               </div></div><!--header end-->

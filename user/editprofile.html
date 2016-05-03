@@ -1,74 +1,79 @@
 
-<div class="modal-content modal-sm profile_out">
-  <div class="modal-body edit-modal-cont">
-    <uib-tabset>
-    <uib-tab heading="Profile" active="true">
-    <!-- Nav tabs -->
-        <!--ul class="nav nav-tabs profile_b_b" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile   </a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Address Info</a></li>
-        </ul-->
+               
+            <div class="modal-content profile_out ">
+                <div class="modal-body">
+  
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs profile_b_b" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile   </a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Address Info</a></li>
+  
+  </ul>
 
-        <!-- Tab panes -->
-        <div class="tab_box_profile">
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="First Name*"  ng-model="user.first_name"></span></div>
-           <span class="error" ng-show="errors.first_name">{{errors.first_name}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Last Name*"  ng-model="user.last_name"></span></div>
-           <span class="error" ng-show="errors.last_name">{{errors.last_name}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Email*"  ng-model="user.email"></span></div>
-           <span class="error" ng-show="errors.email">{{errors.email}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Alternate Email"  ng-model="data.email"></span></div>
-           <span class="error" ng-show="errors.alt_email">{{errors.email}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="password" placeholder="Current Password"  ng-model="user.current_password"></span></div>
-           <span class="error" ng-show="errors.current_password">{{errors.current_password}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="password" placeholder="Password" ng-model="user.password"></span></div>
-           <span class="error" ng-show="errors.password">{{errors.password}}</span>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
 
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="password" placeholder="Confirm Password"  ng-model="user.password_confirmation"></span></div>
-           <span class="error" ng-show="errors.password_confirmation">{{errors.password_confirmation}}</span>
-          <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="DOT #"  ng-model="user.mc_num"></span></div>
-          <span class="error" ng-show="errors.mc_num">{{errors.mc_num}}</span>
-          <div class="col-lg-12"> <cite>
-           <select class="form-control" ng-model="user.job_roles">
-              <option ng-repeat="sel in select_roles" value="{{sel.value}}" ng-selected="sel.value == job_roles">{{sel.label}}</option>
-           </select></cite>
-            <span class="error" ng-show="errors.user_type">{{errors.job_roles}}</span>
-           </div>
-
-           <div class="col-lg-12"><div class="profile_button">  
-             <div class="save_d"><a href=""  ng-click="save()">SAVE</a></div>
-             <div class="next_d"><a href=""  ng-click="close()">Cancel</a></div>
-           </div>  
-           <div style="clear:both;"></div>
-
-         </div>
-       </div>
-     </uib-tab>
-
-     <uib-tab heading="Address Info.">
-     <div class="tab_box_profile">
-       <div class="error" ng-show="errors.addressError">{{errors.addressError}}</div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Company" ng-model="data.company_name"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Address1" ng-model="data.address1"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Address2" ng-model="data.address2"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Zip*" name="zip_code" ng-blur="getCityState(data.zip_code)" ng-model="data.zip_code"></span>
-       <span class="error" ng-show="error" ng-cloak> {{error}}</span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="City*" ng-model="data.city"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="State*" ng-model="data.state"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Title*" ng-model="data.title"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Contact Name" ng-model="data.contact_name"></span></div>
-
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Fax" ng-model="data.fax"></span></div>
-       <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Phone" ng-model="data.phone"></span></div>
-
-       <div class="col-lg-12"><div class="profile_button">  
-         <div class="save_d"><a href="" ng-click="saveAddress()">SAVE</a></div>
-         <div class="next_d"><a href=""  ng-click="close()">Cancel</a></div>
-       </div>
+    <div class="tab_box_profile">
+     <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="First Name*" ng-model="user.first_name"></span>
+      <span class="error" ng-show="errors.first_name">{{errors.first_name}}</span>
      </div>
-     <div style="clear:both;"></div>
+      <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Last Name*" ng-model="user.last_name"></span>
+     <span class="error" ng-show="errors.last_name">{{errors.last_name}}</span>
    </div>
- </div>
-</uib-tab>
-</uib-tabset>
-</div>
+     <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Email*"  ng-model="user.email"></span>
+      <span class="error" ng-show="errors.email">{{errors.email}}</span>
+     </div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Alternate Email" ng-model="data.email"></span>
+    <span class="error" ng-show="errors.alt_email">{{errors.email}}</span>
+   </div>
+    <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Current Password" ng-model="user.current_password"></span>
+    <span class="error" ng-show="errors.current_password">{{errors.current_password}}</span>
+    </div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Password"  ng-model="user.password"></span>
+    <span class="error" ng-show="errors.password">{{errors.password}}</span>
+   </div>
+  
+
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Confirm Password" ng-model="user.password_confirmation"></span>
+      <span class="error" ng-show="errors.password_confirmation">{{errors.password_confirmation}}</span>
+   </div>
+
+    <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="DOT #" ng-model="user.mc_num"></span>
+    <span class="error" ng-show="errors.mc_num">{{errors.mc_num}}</span>
+    </div>
+   <div class="col-lg-12"> <cite>
+   <select class="form-control ng-pristine ng-valid ng-touched" ng-model="user.job_roles">
+ 
+ <option ng-selected="sel.value == job_roles" value="{{sel.value}}" ng-repeat="sel in select_roles" class="ng-binding ng-scope">{{sel.label}}</option>
+              </select></cite>
+ <span class="error" ng-show="errors.user_type">{{errors.job_roles}}</span>
+              </div>
+    
+  <div class="col-lg-12"><div class="profile_button">  
+  <div class="save_d"><a href="" ng-click="save()">SAVE</a></div> <div class="next_d"><a href="" ng-click="close()">Cancel</a></div></div>   </div>
+  </div></div>
+  
+    <div role="tabpanel" class="tab-pane" id="profile">
+    <div class="tab_box_profile">
+    <div class="error" ng-show="errors.addressError">{{errors.addressError}}</div>
+     <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Company" ng-model="data.company_name"></span></div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Address1" ng-model="data.address1"></span></div>
+     <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Address2" ng-model="data.address2"></span></div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Zip*" name="zip_code" ng-blur="getCityState(data.zip_code)" ng-model="data.zip_code"></span></div>
+
+    <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="City*" ng-model="data.city"></span></div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="State*" ng-model="data.state"></span></div>
+   <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Title*" ng-model="data.title"></span></div>
+    <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Contact Name" ng-model="data.contact_name"></span></div>
+  
+      <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Fax" ng-model="data.fax"></span></div>
+  <div class="col-lg-6 col-sm-6 col-md-6"> <span><input type="text" placeholder="Phone" ng-model="data.phone"></span></div>
+    
+  <div class="col-lg-12"><div class="profile_button">  
+  <div class="save_d"><a href=""  ng-click="saveAddress()">SAVE</a></div> <div class="next_d"><a href="" ng-click="close()">Cancel</a></div></div>   </div>
+  </div>  </div>
+  </div>
+  
+  </div>
+  </div>  
