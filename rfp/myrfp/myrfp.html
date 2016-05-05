@@ -4,7 +4,7 @@
         <div class="col-lg-10"><h1>MY RFPS</h1></div>
         <div class="col-lg-2"> <div class="delivered_view"><a href="viewall">View</a></div> 
       </div> </div></div> 
-
+   
       <div class="col-lg-12">
         <div class="carriers_box_lsiting">
           <table class="table">
@@ -28,8 +28,8 @@
                 <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
                 <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
                 <td> 
-                  <button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
-                    contact</button>
+                  <a href="#" class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5" ng-click="pauseConfirmation(item.id)" >
+                        PAUSE</a>
   <!--div id="smallModal-5" class="modal fade" tabindex="-2" role="dialog">
   <div class="modal-dialog modal-sm">
   <div class="modal-content profile_out">

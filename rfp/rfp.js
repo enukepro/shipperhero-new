@@ -382,6 +382,7 @@ $scope.items = {
     $http.get(baseUrl+'api/v1/shipments/'+ $scope.items.data[index].id +'.json').success(function(data){
 
       $scope.detailItem = data;
+      $scope.bidData = data.proposals;
     });    
   }
   
@@ -428,8 +429,16 @@ $scope.items = {
   }
   
   $scope.setVisible = function(index) {
-    retrieveDetails(index);
-    $scope.selected = index;
+      if($scope.prevSelected == index)
+    {
+       $scope.selected = null;
+       $scope.prevSelected = null;
+    }else{
+      retrieveDetails(index);
+      $scope.selected = index;
+      $scope.prevSelected = index;
+    }
+    
   }  
   
   $scope.isVisible = function(index) {
@@ -842,7 +851,7 @@ Description:- Used to populate all record of rfp
 rfpApp.controller('ViewAllRfpCtrl', ['$scope', '$http','$window','$uibModal','$route', '$routeParams','formDataStorageService','notificationService',function ($scope,$http,$window,$uibModal,$route, $routeParams,formDataStorageService,notificationService) {
  
   $scope.items = {
-    input: {limit: 5, status: ''},
+    input: {limit: 5, status: 'proposing'},
     data: []
   };  
   

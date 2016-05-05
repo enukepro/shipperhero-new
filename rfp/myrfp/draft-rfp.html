@@ -31,7 +31,7 @@
        <td>{{item.proposals.high || 0}}/{{item.proposals.low || 0}}/{{item.proposals.avg || 0}}</td>
        <td>{{getDateObj(item.auction_end_at) | date : 'short'}}</td>
        <td> 
-        <button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
+        <!--button class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5">
         contact</button>
         <!--div id="smallModal-5" class="modal fade" tabindex="-2" role="dialog">
         <div class="modal-dialog modal-sm">
@@ -41,6 +41,8 @@
           <figure><img src="images/profile_p.jpg"></figure>
           <h1>Welcome john malik  ! <span>Current User</span></h1>
           </div></div></div>  </div>  </div--> 
+           <a href="#" class="btn btn-primary carrie_chan" data-toggle="modal" data-target="#smallModal-5" ng-click="pauseConfirmation(item.id)" >
+                        PAUSE</a>
           <div class="confirm_view"><a href="#">View</a></div>
        </td> 
 	 </tr>
